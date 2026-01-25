@@ -7,16 +7,40 @@
 
 # 3. Configuration
 
-- a.
+- a. Mise à jour et configuration de la VM
  
-Configuration de la VM
+Mise à jour de la VM contoller plan
 
 ```
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt update && sudo apt upgrade -y
 ```
+
+Configuration du nom de la machine
 
 ```
 hostnamectl set-hostname contollerplan
 ```
 vim  /etc/hosts et ajout de contollerplan
+
+- b. Installation de rke2 sur contollerplan
+
+On passe en mode root
+
+```
+sudo su -
+```
+Récupération du script d'installation de rke2 et exécution du script
+
+```
+curl -sfL https://get.rke2.io | sh -
+```
+Activation et démarrage du service rke2-server.service
+
+```
+systemctl enable rke2-server.service
+```
+
+```
+systemctl start rke2-server.service
+```
 
