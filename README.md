@@ -3,6 +3,10 @@
 
 - b. Réseau
 
+Ouverture de ports
+
+`sudo systemctl disable --now ufw && sudo systemctl disable --now apparmor.service`
+
 # 2. Architecure technique
 
 # 3. Configuration
@@ -18,7 +22,7 @@ sudo apt update && sudo apt upgrade -y
 Configuration du nom de la machine
 
 ```
-hostnamectl set-hostname contollerplan
+hostnamectl set-hostname rke2-server
 ```
 vim  /etc/hosts et ajout de contollerplan
 
