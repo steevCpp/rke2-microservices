@@ -17,11 +17,9 @@ Nous sommes sur un environnement hybride composé de 3 serveurs:
 - un wsl ubuntu24.04  qui servira de control plan  
 - deux vm ubuntu24.04 sur virtuelbox
 
-# 3. Configuration
+# 3. Installation et configuration du cluster
 
-- a. Mise à jour et configuration de la VM
- 
-Mise à jour de la VM contoller plan
+- a. Mise à jour de la VM contoller plan
 
 ```
 sudo apt update && sudo apt upgrade -y
@@ -30,11 +28,11 @@ sudo apt update && sudo apt upgrade -y
 Configuration du nom de la machine
 
 ```
-hostnamectl set-hostname rke2-server
+hostnamectl set-hostname ubuntu
 ```
 vim  /etc/hosts et ajout de contollerplan
 
-- b. Installation de rke2 sur contollerplan
+- b. Installation et configuration de rke2 sur contollerplan `ubuntu`
 
 On passe en mode root
 
@@ -56,5 +54,17 @@ systemctl enable rke2-server.service
 systemctl start rke2-server.service
 ```
 
-- c. Installation de rke2 sur contollerplan
+- c. Installation et configuration des nodes `node-1-rke2` `node-2-rke2`
+
+Mise à jour de la VM contoller plan
+
+```
+sudo apt update && sudo apt upgrade -y
+```
+
+Nommage des vms
+
+```
+hostnamectl set-hostname node-1-rke2
+```
 
