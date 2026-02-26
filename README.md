@@ -56,3 +56,5 @@ systemctl enable rke2-server.service
 systemctl start rke2-server.service
 ```
 
+- c. Installation de rke2 sur contollerplan
+
