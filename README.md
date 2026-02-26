@@ -1,5 +1,9 @@
-# 1. Installation de RKE2 sur deux servers ubuntu
-- a. Prérequis: https://www.suse.com/suse-rke2/support-matrix/all-supported-versions/rke2-v1-34/
+# 1. Contexte
+Installation d'un cluster k8s via rancher et configuration de cilium comme ingress controller, et deployement HA d'une application wordpress.
+
+## Prérequis
+
+- a. vm : https://www.suse.com/suse-rke2/support-matrix/all-supported-versions/rke2-v1-34/
 
 - b. Réseau
 
@@ -8,6 +12,10 @@ Ouverture de ports
 `sudo systemctl disable --now ufw && sudo systemctl disable --now apparmor.service`
 
 # 2. Architecure technique
+
+Nous sommes sur un environnement hybride composé de 3 serveurs:
+- un wsl ubuntu24.04  qui servira de control plan  
+- deux vm ubuntu24.04 sur virtuelbox
 
 # 3. Configuration
 
